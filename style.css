@@ -1,0 +1,98 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  width: 100dvw;
+  height: 100dvh;
+
+  display: grid;
+  place-items: center;
+}
+
+.calendar {
+  border-radius: .2rem;
+  overflow: hidden;
+
+  width: fit-content;
+  user-select: none;
+  box-shadow: 0 0 .11rem #00000088;
+}
+
+/* calendar header */
+.calendar-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+  background-color: white;
+
+  border-bottom: 1px solid #958c8c68;
+  padding: .3rem 0;
+}
+
+.prev-month, .next-month{
+  font-size: larger;
+  font-weight: 600;
+  color: red;
+}
+/* calendar header */
+
+
+/* calendar body */
+.calendar-body {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(2rem, 2.5rem));
+  grid-template-rows: repeat(6, minmax(2rem, 2.5rem));
+  gap: .1rem;
+  
+  background-color: white;
+  padding: .5rem;
+}
+
+.day {
+  display: grid;
+  place-items: center;
+
+  color: blueviolet;
+}
+
+.date {
+  border-radius: 50%;
+  
+  display: grid;
+  place-items: center;
+  
+  transition: all;
+  transition-duration: .3s;
+}
+
+
+.date:hover {
+  
+  background-color: red;
+  color: white;
+  box-shadow: inset 0 0 .15rem #00000088;
+
+  font-weight: bold;
+}
+
+.today {
+  font-weight: bold;
+  color: white;
+  background-color: blueviolet;
+  box-shadow: inset 0 0 .15rem blueviolet;
+  
+  font-weight: bold;
+}
+/* calendar body */
