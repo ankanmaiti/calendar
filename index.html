@@ -13,37 +13,28 @@
 
   <div class="calendar">
     <div class="calendar-header">
-      <button class="prev-month">&lt;</button>
-      <div> 
-        <span class="month">Aug</span> 
-        <span class="year">2023</span>
+      <button data-month-changer="prev" class="prev-month">&lt;</button>
+      <div class="">
+        <span data-month class="month">Aug</span>
+        <span data-year class="year">2023</span>
       </div>
-      <button class="next-month">&gt;</button>
+      <button data-month-changer="next" class="next-month">&gt;</button>
     </div>
 
-    <div class="calendar-body">
-      <p data-day="Mon" class="day">M</p>
-      <p data-day="Tue" class="day">T</p>
-      <p data-day="Wed" class="day">W</p>
-      <p data-day="Thu" class="day">T</p>
-      <p data-day="Fri" class="day">F</p>
-      <p data-day="Sat" class="day">S</p>
-      <p data-day="Sun" class="day">S</p>
-      <button data-date class="date today">1</button><button data-date class="date">2</button><button data-date
-        class="date">3</button><button data-date class="date">4</button><button data-date class="date">5</button><button
-        data-date class="date">6</button><button data-date class="date">7</button><button data-date
-        class="date">8</button><button data-date class="date">9</button><button data-date
-        class="date">10</button><button data-date class="date">11</button><button data-date
-        class="date">12</button><button data-date class="date">13</button><button data-date
-        class="date">14</button><button data-date class="date">15</button><button data-date
-        class="date">16</button><button data-date class="date">17</button><button data-date
-        class="date">18</button><button data-date class="date">19</button><button data-date
-        class="date">20</button><button data-date class="date">21</button><button data-date
-        class="date">22</button><button data-date class="date">23</button><button data-date
-        class="date">24</button><button data-date class="date">25</button><button data-date
-        class="date">26</button><button data-date class="date">27</button><button data-date
-        class="date">28</button><button data-date class="date">29</button><button data-date
-        class="date">30</button><button data-date class="date">31</button>
+    <div data-calendar-body class="calendar-body">
+      <div class="calendar-week-days">
+        <p data-day="Sun" class="day">S</p>
+        <p data-day="Mon" class="day">M</p>
+        <p data-day="Tue" class="day">T</p>
+        <p data-day="Wed" class="day">W</p>
+        <p data-day="Thu" class="day">T</p>
+        <p data-day="Fri" class="day">F</p>
+        <p data-day="Sat" class="day">S</p>
+      </div>
+
+      <div data-container="dates" class="calendar-dates">
+      </div>
+
     </div>
   </div>
 </body>

@@ -1,8 +1,11 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --col-width : minmax(2rem, 2.5rem);
 }
 
 button {
@@ -15,6 +18,8 @@ body {
 
   width: 100dvw;
   height: 100dvh;
+
+  background-color: #340257;
 
   display: grid;
   place-items: center;
@@ -51,13 +56,19 @@ body {
 
 /* calendar body */
 .calendar-body {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(2rem, 2.5rem));
-  grid-template-rows: repeat(6, minmax(2rem, 2.5rem));
-  gap: .1rem;
+  padding: .5rem;
   
   background-color: white;
-  padding: .5rem;
+}
+
+.calendar-week-days {
+  display: grid;
+  grid-template-columns: repeat(7, var(--col-width));
+}
+
+.calendar-dates {
+  display: grid;
+  grid-template-columns: repeat(7, var(--col-width));
 }
 
 .day {
@@ -67,7 +78,11 @@ body {
   color: blueviolet;
 }
 
+/* dates */
 .date {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  
   border-radius: 50%;
   
   display: grid;
@@ -77,22 +92,44 @@ body {
   transition-duration: .3s;
 }
 
-
 .date:hover {
   
   background-color: red;
   color: white;
   box-shadow: inset 0 0 .15rem #00000088;
-
+  
   font-weight: bold;
 }
 
-.today {
-  font-weight: bold;
+
+/* selected-date */
+.selected-date {
+  font-weight: 500;
   color: white;
+
+  position: relative;
+  z-index: 1;
+}
+
+.selected-date::after {
+  content: '';
+  width: 80%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+
+  position: absolute;
+
   background-color: blueviolet;
   box-shadow: inset 0 0 .15rem blueviolet;
-  
+
+  z-index: -1;
+}
+
+.selected-date:hover {
+  background-color: blueviolet;
+  color: white;
+  box-shadow: inset 0 0 .15rem #00000088;
+
   font-weight: bold;
 }
 /* calendar body */
